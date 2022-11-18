@@ -46,7 +46,7 @@ Key Competencies:
 
 #### I am
 
-Abdur Rahman
-Frontend Developer
-Whatsapp: 01705952160
-arwithlpd@gmail.com
+Abdur Rahman <br/>
+Frontend Developer <br/> 
+Whatsapp: 01705952160 <br/>
+arwithlpd@gmail.com <br/>
