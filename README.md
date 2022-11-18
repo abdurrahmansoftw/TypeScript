@@ -1,6 +1,6 @@
 # Welcome to TypeScript!
 
-TypeScript (Basic)
+### TypeScript (Basic)
 
 Typescript is a strongly typed superset of JavaScript which compiles to plain JavaScript. It is a pure object-oriented programming language and it works well for large scale Javascript applications.
 
@@ -17,7 +17,7 @@ Key Competencies:
 7. Class - Use of object-oriented class-based approach to creating objects.
 8. Inheritance - Use of Inheritance to receive the features, interactions, and behaviors of a class by another class.
 
-TypeScript (Intermediate)
+### TypeScript (Intermediate)
 
 Typescript is a strongly typed superset of JavaScript which compiles to plain JavaScript. It is a pure object-oriented programming language and it works well for large scale Javascript applications.
 
@@ -31,7 +31,7 @@ Key Competencies:
 4. Decorators - Use of decorators to communicate information about the functions, class, property, or parameters.
 5. Constructors, Instance, and static members - Use of default constructors and parameterized constructors in a class. Use of static members to share a variable across all instances of a class.
 
-TypeScript (Advanced)
+### TypeScript (Advanced)
 
 Typescript is a strongly typed superset of JavaScript which compiles to plain JavaScript. It is a pure object-oriented programming language and it works well for large scale Javascript applications.
 
