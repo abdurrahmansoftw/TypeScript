@@ -43,3 +43,10 @@ Key Competencies:
 2. Interfaces - Use of interfaces to create contracts between itself and any class which implements it.
 3. Interface inheritance - Use of interface inheritance to reuse existing interfaces and to inherit the members of the existing interface but not their implementation.
 4. Modules and Namespaces - Use of modules and namespaces to restrict access of members outside it, unless exported and imported.
+
+#### I am
+
+Abdur Rahman
+Frontend Developer
+Whatsapp: 01705952160
+arwithlpd@gmail.com
