@@ -59,4 +59,4 @@ Key Competencies:
 Abdur Rahman <br/>
 Frontend Developer <br/>
 Whatsapp: 01705952160 <br/>
-arwithlpd@gmail.com <br/>
+abdurrahmansoftw@gmail.com <br/>
