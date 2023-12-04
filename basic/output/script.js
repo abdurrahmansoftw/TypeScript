@@ -21,5 +21,5 @@ const userDetails = (id, user) => {
 };
 userDetails(1, { name: 'a', age: 4 });
 const sayHello = (user) => {
-    console.log(`hello ${user.name}, your age is ${user.age}`);
+    console.log(`hello ${user.age > 50 ? 'Sir' : 'Mr.'} ${user.name}`);
 };
