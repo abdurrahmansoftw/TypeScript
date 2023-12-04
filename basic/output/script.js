@@ -1,7 +1,7 @@
 "use strict";
-let person = {
-    name: 'akaid',
-    age: 30,
-    isCaptain: true,
+// let a: (string | number | boolean)[] = ['a', false, 4];
+// console.log(a);
+const myFunc = (a, b) => {
+    console.log(`Hello ${a} ${b}`);
 };
-console.log(person.name);
+myFunc('AKAID', 'MOSH');
