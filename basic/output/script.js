@@ -1,7 +1,18 @@
 "use strict";
 // let a: (string | number | boolean)[] = ['a', false, 4];
 // console.log(a);
-const myFunc = (a, b) => {
-    console.log(`Hello ${a} ${b}`);
+// let c: {
+//   name: string;
+//   age: number;
+//   isAdult: boolean;
+// };
+// c = {
+//   name: 'a',
+//   age: 4,
+//   isAdult: false,
+// };
+// console.log(c);
+const myFunc = (a, b, c = false) => {
+    return a + b;
 };
-myFunc('AKAID', 'MOSH');
+console.log(myFunc(1, 2, true));

@@ -15,9 +15,8 @@
 
 // console.log(c);
 
-function
-const myFunc = (a: string, b: string) => {
-  console.log(`Hello ${a} ${b}`);
+const myFunc = (a: number, b: number, c: boolean = false): number => {
+  return a + b;
 };
 
-myFunc('AKAID', 'MOSH');
+console.log(myFunc(1, 2, true));
