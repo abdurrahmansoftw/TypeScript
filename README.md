@@ -4,7 +4,17 @@
 
 Typescript is a strongly typed superset of JavaScript which compiles to plain JavaScript. It is a pure object-oriented programming language and it works well for large scale Javascript applications.
 
-This competency area includes data types, Variables Declaration, Variables Scoping, Hoisting and Destructuring, Array and Tuples, Type annotations, Interface and assertions, Functions, classes, and inheritance.
+This competency area includes
+--> data types,
+--> Variables Declaration,
+--> Variables Scoping,
+--> Hoisting and Destructuring,
+--> Array and Tuples,
+--> Type annotations,
+--> Interface and assertions,
+--> Functions,
+--> classes,
+--> and inheritance.
 
 Key Competencies:
 
@@ -47,6 +57,6 @@ Key Competencies:
 #### I am
 
 Abdur Rahman <br/>
-Frontend Developer <br/> 
+Frontend Developer <br/>
 Whatsapp: 01705952160 <br/>
 arwithlpd@gmail.com <br/>
