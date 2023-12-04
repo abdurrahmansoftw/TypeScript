@@ -1,3 +1,7 @@
 "use strict";
-const country = 'I love akaid';
-console.log(country);
+let person = {
+    name: 'akaid',
+    age: 30,
+    isCaptain: true,
+};
+console.log(person.name);
