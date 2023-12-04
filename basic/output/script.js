@@ -12,7 +12,14 @@
 //   isAdult: false,
 // };
 // console.log(c);
-const myFunc = (a, b, c = false) => {
-    return a + b;
+// const myFunc = (a: number, b: number, c: boolean = false): number => {
+//   return a + b;
+// };
+// console.log(myFunc(1, 2, true));
+const userDetails = (id, user) => {
+    console.log(`user id is ${id}, name is ${user.name} and age is ${user.age}`);
 };
-console.log(myFunc(1, 2, true));
+userDetails(1, { name: 'a', age: 4 });
+const sayHello = (user) => {
+    console.log(`hello ${user.name}, your age is ${user.age}`);
+};
