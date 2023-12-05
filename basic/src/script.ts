@@ -40,16 +40,32 @@
 
 // console.log(add(1, 2));
 
-class Player {
-  name: string;
-  age: number;
-  country: string;
+// class Player {
+//   name: string;
+//   age: number;
+//   country: string;
 
-  constructor(n: string, a: number, c: string) {
-    this.name = n;
-    this.age = a;
-    this.country = c;
-  }
+//   constructor(n: string, a: number, c: string) {
+//     this.name = n;
+//     this.age = a;
+//     this.country = c;
+//   }
+
+//   play() {
+//     console.log(`${this.name} from ${this.country} is playing, he is ${this.age} years old`);
+//   }
+// }
+
+// const player1 = new Player('mosh', 40, 'Bangladesh');
+// const player2 = new Player('alu', 40, 'Bangladesh');
+// const player3 = new Player('potol', 40, 'Bangladesh');
+
+// const players: Player[] = [player1, player2, player3];
+// console.log(players);
+
+// access modifier
+class Player {
+  constructor(private name: string, public age: number, private country: string) {}
 
   play() {
     console.log(`${this.name} from ${this.country} is playing, he is ${this.age} years old`);
@@ -61,4 +77,4 @@ const player2 = new Player('alu', 40, 'Bangladesh');
 const player3 = new Player('potol', 40, 'Bangladesh');
 
 const players: Player[] = [player1, player2, player3];
-console.log(players);
+console.log(players.map((player) => player.play()));
