@@ -126,3 +126,34 @@
 //   type: 'good',
 //   data: { name: 'alukha', age: 4 },
 // };
+
+// ENUMS
+// enum RType {
+//   SUCCESS,
+//   FAILURE,
+//   UNAUTHENTICATED,
+//   UNAUTHORIZED,
+// }
+
+// interface APIResponse<T> {
+//   status: number;
+//   type: RType;
+//   data: T;
+// }
+
+// const response1: APIResponse<object> = {
+//   status: 200,
+//   type: RType.UNAUTHENTICATED,
+//   data: { name: 'alukha', age: 4 },
+// };
+
+// console.log(response1);
+
+// TUPLES
+let a: [string, number, boolean];
+a = ['alukha', 4, true];
+console.log(a);
+
+let b: [string, object, number, boolean];
+b = ['alukha', { kau: 1 }, 4, true];
+console.log(b);
