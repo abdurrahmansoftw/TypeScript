@@ -80,23 +80,49 @@
 // console.log(players.map((player) => player.play()));
 
 // typescript interface
-interface User {
-  name: string;
-  age: number;
-  country: string;
-  printDetails(): string;
-}
+// interface User {
+//   name: string;
+//   age: number;
+//   country: string;
+//   printDetails(): string;
+// }
 
-class Player implements User {
-  constructor(public name: string, public age: number, public country: string) {}
+// class Player implements User {
+//   constructor(public name: string, public age: number, public country: string) {}
 
-  printDetails() {
-    return `${this.name} from ${this.country} is playing, he is ${this.age} years old`;
-  }
-}
+//   printDetails() {
+//     return `${this.name} from ${this.country} is playing, he is ${this.age} years old`;
+//   }
+// }
 
-const player1 = new Player('mosh', 40, 'use');
-const player2 = new Player('alu', 40, 'india');
+// const player1 = new Player('akaid', 25, 'use');
+// const player2 = new Player('alukha', 20, 'india');
 
-const players: User[] = [player1, player2];
-console.log(players.map((player) => player.printDetails()));
+// const players: User[] = [player1, player2];
+// console.log(players.map((player) => player.printDetails()));
+
+// GENERICS -> flexible reusable code with type safety and intellisense support
+// const addID = <T extends object>(obj: T) => {
+//   let id = Math.floor(Math.random() * 100);
+//   return { ...obj, id };
+// };
+
+// let user = addID({
+//   name: 'alukha',
+//   age: 4,
+// });
+
+// console.log(user);
+
+// Interface GENERICS
+// interface APIResponse<T> {
+//   status: number;
+//   type: string;
+//   data: T;
+// }
+
+// const response1: APIResponse<object> = {
+//   status: 200,
+//   type: 'good',
+//   data: { name: 'alukha', age: 4 },
+// };
