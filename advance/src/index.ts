@@ -136,6 +136,19 @@
 // };
 // console.log(ride.speed);
 
-// type assertions
-let phone = document.getElementById('app') as HTMLInputElement;
-phone.value = '123';
+// type assertion
+// let phone = <HTMLInputElement>document.getElementById('app');
+// phone.value = '123';
+//
+
+// the unknown type
+// function render(document: unknown) {
+//   // Type Narrowing
+//   if (document instanceof WordDocument) {
+//     document.toUpperCase();
+//   }
+//   document.move();
+//   document.fly();
+//   document.get();
+//   document.send();
+// }
