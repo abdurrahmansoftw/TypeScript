@@ -1,3 +1,7 @@
-"use strict";
-let numbers = [1, 2, 3, 4, 5];
-numbers.forEach((number) => console.log(number));
+'use strict';
+let tuple = [1, 'abc', true];
+tuple.push(1);
+tuple.push('abc');
+tuple.push(true);
+tuple.push(2);
+tuple.push('def');
