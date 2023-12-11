@@ -1,6 +1,9 @@
 "use strict";
-function calculateTax(amount) {
-    return amount * 1.2;
+function calculateTax(amount, taxYear) {
+    if (taxYear < 2024)
+        return amount * 0.05;
+    else
+        return amount * 0.1;
 }
-let taxValue = calculateTax(100);
-console.log(`2: taxValue: ${taxValue}`);
+let taxValue = calculateTax(100, 12);
+console.log(`2 args: ${taxValue}`);
