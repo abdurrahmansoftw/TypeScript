@@ -20,3 +20,17 @@
 // tuple.push(true);
 // tuple.push(2);
 // tuple.push('def');
+
+// Enums
+// const small = 0;
+// const medium = 1;
+// const large = 2;
+
+// PascleCase for classes
+// const enum Sizes {
+//   small = 1,
+//   medium,
+//   large,
+// }
+// let mySize: Sizes = Sizes.small;
+// console.log(mySize);
