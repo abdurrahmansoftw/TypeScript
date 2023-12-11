@@ -44,7 +44,22 @@
 // let taxValue: number = calculateTax(100, 12);
 // console.log(`2 args: ${taxValue}`);
 
-let employee: { readonly id: number; name: string; retire: (date: Date) => void } = {
+// let employee: { readonly id: number; name: string; retire: (date: Date) => void } = {
+//   id: 1,
+//   name: 'John',
+//   retire: (date: Date) => {
+//     console.log(date);
+//   },
+// };
+
+// Type Alias
+type Employee = {
+  readonly id: number;
+  name: string;
+  retire: (date: Date) => void;
+};
+
+let employee: Employee = {
   id: 1,
   name: 'John',
   retire: (date: Date) => {
