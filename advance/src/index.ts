@@ -114,16 +114,24 @@
 // }
 // calculateTax(100);
 
-type Customar = {
-  birthday?: Date;
+// type Customar = {
+//   birthday?: Date;
+// };
+
+// function getCustumor(customerId: number): Customar | null {
+//   return customerId === 0 ? null : { birthday: new Date() };
+// }
+
+// let customar = getCustumor(1);
+// console.log(customar?.birthday?.getFullYear());
+
+// let log: any = null;
+// log?.();
+
+let speed: number | null = null;
+
+let ride = {
+  // Nullish Coalescing
+  speed: speed ?? 40,
 };
-
-function getCustumor(customerId: number): Customar | null {
-  return customerId === 0 ? null : { birthday: new Date() };
-}
-
-let customar = getCustumor(1);
-console.log(customar?.birthday?.getFullYear());
-
-let log: any = null;
-log?.();
+console.log(ride.speed);
