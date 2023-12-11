@@ -152,3 +152,11 @@
 //   document.get();
 //   document.send();
 // }
+
+// Never Type
+function processEvent(): never {
+  while (true) {}
+}
+
+processEvent();
+console.log('event');
