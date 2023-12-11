@@ -102,8 +102,25 @@
 // let weight: Metric = 'kg';
 
 // Null and Undefined value
-function greet(name: string | null | undefined) {
-  if (name) console.log(name.toUpperCase());
-  return 'Helo';
+// function greet(name: string | null | undefined) {
+//   if (name) console.log(name.toUpperCase());
+//   return 'Helo';
+// }
+// greet(undefined);
+
+// Optional Parameters
+// function calculateTax(amount: number, discount?: number, tax?: number): number {
+//   return amount * 1.2;
+// }
+// calculateTax(100);
+
+type Customar = {
+  birthday?: Date;
+};
+
+function getCustumor(customerId: number): Customar | null {
+  return customerId === 0 ? null : { birthday: new Date() };
 }
-greet(undefined);
+
+let customar = getCustumor(1);
+console.log(customar?.birthday?.getFullYear());

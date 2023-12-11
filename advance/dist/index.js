@@ -1,7 +1,6 @@
 "use strict";
-function greet(name) {
-    if (name)
-        console.log(name.toUpperCase());
-    return 'Helo';
+function getCustumor(customerId) {
+    return customerId === 0 ? null : { birthday: new Date() };
 }
-greet(undefined);
+let customar = getCustumor(1);
+console.log(customar === null || customar === void 0 ? void 0 : customar.birthday);
