@@ -68,11 +68,27 @@
 // };
 
 // Union Types
-function kgToLbs(weight: number | string): number {
-  if (typeof weight === 'string') {
-    weight = parseFloat(weight);
-  }
-  return weight / 2.2;
-}
-kgToLbs(100);
-kgToLbs('100');
+// function kgToLbs(weight: number | string): number {
+//   if (typeof weight === 'string') {
+//     weight = parseFloat(weight);
+//   }
+//   return weight / 2.2;
+// }
+// kgToLbs(100);
+// kgToLbs('100');
+
+// Intersection Types
+// let weight: number & string;
+
+type Draggable = {
+  drag: () => void;
+};
+type Resizable = {
+  resize: () => void;
+};
+type UIWidget = Draggable & Resizable;
+
+let textBox: UIWidget = {
+  drag: () => {},
+  resize: () => {},
+};
