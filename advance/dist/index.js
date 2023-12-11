@@ -1,3 +1,7 @@
 "use strict";
-let quality = 100;
-let weight = 'kg';
+function greet(name) {
+    if (name)
+        console.log(name.toUpperCase());
+    return 'Helo';
+}
+greet(undefined);

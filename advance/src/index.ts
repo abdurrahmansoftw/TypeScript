@@ -102,7 +102,8 @@
 // let weight: Metric = 'kg';
 
 // Null and Undefined value
-function greet(name: string) {
-  console.log(name.toUpperCase());
+function greet(name: string | null | undefined) {
+  if (name) console.log(name.toUpperCase());
+  return 'Helo';
 }
-greet(null);
+greet(undefined);
