@@ -124,3 +124,6 @@ function getCustumor(customerId: number): Customar | null {
 
 let customar = getCustumor(1);
 console.log(customar?.birthday?.getFullYear());
+
+let log: any = null;
+log?.();
