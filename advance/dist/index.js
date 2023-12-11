@@ -1,3 +1,3 @@
 "use strict";
-let age = 18;
-console.log(age);
+let numbers = [1, 2, 3, 4, 5];
+numbers.forEach((number) => console.log(number));
