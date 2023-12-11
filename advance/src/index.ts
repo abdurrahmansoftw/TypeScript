@@ -94,9 +94,15 @@
 // };
 
 // Literal Types
-type Quality = 50 | 100;
+// type Quality = 50 | 100;
 
-let quality: Quality = 100;
+// let quality: Quality = 100;
 
-type Metric = 'kg' | 'lbs';
-let weight: Metric = 'kg';
+// type Metric = 'kg' | 'lbs';
+// let weight: Metric = 'kg';
+
+// Null and Undefined value
+function greet(name: string) {
+  console.log(name.toUpperCase());
+}
+greet(null);
