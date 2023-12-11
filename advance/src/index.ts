@@ -34,3 +34,11 @@
 // }
 // let mySize: Sizes = Sizes.small;
 // console.log(mySize);
+
+// function calculateTax(a: number): number
+function calculateTax(amount: number): number {
+  return amount * 1.2;
+}
+
+let taxValue: number = calculateTax(100);
+console.log(`2: taxValue: ${taxValue}`);
