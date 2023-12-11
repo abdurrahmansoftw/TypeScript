@@ -1,8 +1,9 @@
 "use strict";
-let employee = {
-    id: 1,
-    name: 'John',
-    retire: (date) => {
-        console.log(date);
-    },
-};
+function kgToLbs(weight) {
+    if (typeof weight === 'string') {
+        weight = parseFloat(weight);
+    }
+    return weight / 2.2;
+}
+kgToLbs(100);
+kgToLbs('100');

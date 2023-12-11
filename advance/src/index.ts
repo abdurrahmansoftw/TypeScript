@@ -53,16 +53,26 @@
 // };
 
 // Type Alias
-type Employee = {
-  readonly id: number;
-  name: string;
-  retire: (date: Date) => void;
-};
+// type Employee = {
+//   readonly id: number;
+//   name: string;
+//   retire: (date: Date) => void;
+// };
 
-let employee: Employee = {
-  id: 1,
-  name: 'John',
-  retire: (date: Date) => {
-    console.log(date);
-  },
-};
+// let employee: Employee = {
+//   id: 1,
+//   name: 'John',
+//   retire: (date: Date) => {
+//     console.log(date);
+//   },
+// };
+
+// Union Types
+function kgToLbs(weight: number | string): number {
+  if (typeof weight === 'string') {
+    weight = parseFloat(weight);
+  }
+  return weight / 2.2;
+}
+kgToLbs(100);
+kgToLbs('100');
