@@ -128,10 +128,14 @@
 // let log: any = null;
 // log?.();
 
-let speed: number | null = null;
+// let speed: number | null = null;
 
-let ride = {
-  // Nullish Coalescing
-  speed: speed ?? 40,
-};
-console.log(ride.speed);
+// let ride = {
+// Nullish Coalescing
+//   speed: speed ?? 40,
+// };
+// console.log(ride.speed);
+
+// type assertions
+let phone = document.getElementById('app') as HTMLInputElement;
+phone.value = '123';
