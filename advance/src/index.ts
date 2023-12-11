@@ -80,15 +80,23 @@
 // Intersection Types
 // let weight: number & string;
 
-type Draggable = {
-  drag: () => void;
-};
-type Resizable = {
-  resize: () => void;
-};
-type UIWidget = Draggable & Resizable;
+// type Draggable = {
+//   drag: () => void;
+// };
+// type Resizable = {
+//   resize: () => void;
+// };
+// type UIWidget = Draggable & Resizable;
 
-let textBox: UIWidget = {
-  drag: () => {},
-  resize: () => {},
-};
+// let textBox: UIWidget = {
+//   drag: () => {},
+//   resize: () => {},
+// };
+
+// Literal Types
+type Quality = 50 | 100;
+
+let quality: Quality = 100;
+
+type Metric = 'kg' | 'lbs';
+let weight: Metric = 'kg';

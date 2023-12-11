@@ -1,5 +1,3 @@
 "use strict";
-let textBox = {
-    drag: () => { },
-    resize: () => { },
-};
+let quality = 100;
+let weight = 'kg';
