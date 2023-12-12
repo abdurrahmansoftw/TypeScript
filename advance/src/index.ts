@@ -174,7 +174,12 @@ class Account {
   }
 
   deposit(amount: number): void {
-    if (amount > 0) throw new Error('Amount should be greater than 0');
+    if (amount <= 0) throw new Error('Amount should be greater than 0');
     this.banalce += amount;
   }
 }
+// new Instance Creation and Initialization of class
+let account = new Account(1, 'akaid', 0);
+account.deposit(100);
+
+console.log(account);
