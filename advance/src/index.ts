@@ -283,19 +283,48 @@
 
 // 15- Abstract Classes and Methods
 
-abstract class Shape {
-  constructor(public color: string) {}
-  abstract render(): void;
+// abstract class Shape {
+//   constructor(public color: string) {}
+//   abstract render(): void;
+// }
+
+// class Circle extends Shape {
+//   constructor(color: string, public radius: number) {
+//     super(color);
+//   }
+//   override render(): void {
+//     console.log(`Rendering a circle of radius ${this.radius} and color ${this.color}`);
+//   }
+// }
+
+// let shape = new Circle('red', 10);
+// shape.render();
+
+// Interfaces
+
+// abstract class Calender {
+//   constructor(public name: string) {}
+
+//   abstract addEvent(): void;
+//   abstract removeEvent(): void;
+// }
+
+interface Calender {
+  name: string;
+  addEvent(): void;
+  removeEvent(): void;
 }
 
-class Circle extends Shape {
-  constructor(color: string, public radius: number) {
-    super(color);
-  }
-  override render(): void {
-    console.log(`Rendering a circle of radius ${this.radius} and color ${this.color}`);
-  }
+interface CloudCalender extends Calender {
+  sync(): void;
 }
 
-let shape = new Circle('red', 10);
-shape.render();
+class GoogleCalendar implements Calender {
+  constructor(public name: string) {}
+  addEvent(): void {
+    throw new Error('Method not implemented.');
+  }
+  removeEvent(): void {
+    throw new Error('Method not implemented.');
+  }
+}
