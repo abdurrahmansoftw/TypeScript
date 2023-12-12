@@ -381,15 +381,53 @@
 // name: string;
 // }
 
-class Person {
-  constructor(public name: string) {}
-}
+// class Person {
+//   constructor(public name: string) {}
+// }
 
-class Customar extends Person {}
+// class Customar extends Person {}
 
-function echo<T extends Person>(value: T): T {
-  return value;
-}
+// function echo<T extends Person>(value: T): T {
+//   return value;
+// }
 
 // echo(new Person('John'));
-echo(new Customar('John'));
+// echo(new Customar('John'));
+
+// Extending generic Classes
+// interface Product {
+//   name: string;
+//   price: number;
+// }
+
+// class Store<T> {
+//   protected _objects: T[] = [];
+
+//   add(object: T) {
+//     this._objects.push(object);
+//   }
+// }
+
+// Pass on the generic type parameter to the base class
+// class CompressibleStore<T> extends Store<T> {
+//   compress() {}
+// }
+// let store = new CompressibleStore<Product>();
+// store.compress();
+
+// Restricting the generics type parameter
+// class SearchableStore<T extends { name: string }> extends Store<T> {
+//   find(name: string): T | null {
+//     return this._objects.find((item) => item.name === name) ?? null;
+//   }
+// }
+
+// Fix The generics type parameter
+// class ProductStore extends Store<Product> {
+//   filterByCategory(category: string): Product[] {
+//     return this._objects.filter((item) => item.name === category);
+//   }
+// }
+
+// let store = new Store<Product>();
+// store.add({ name: 'Shirt', price: 100 });
