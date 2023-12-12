@@ -483,15 +483,50 @@
 //   insertInDOM() {}
 // }
 
-function Component(constructor: Function) {
-  console.log('Component Decorator called');
+// type ComponentOptions = {
+//   selector: string;
+// };
 
-  constructor.prototype.uniqueId = Date.now();
+// // Decorator Factory
+// function Component(options: ComponentOptions) {
+//   return (constructor: Function) => {
+//     console.log('Component Decorator called');
+//     constructor.prototype.options = options;
+//     constructor.prototype.uniqueId = Date.now();
 
-  constructor.prototype.insertInDOM = () => {
-    console.log('Inserting into DOM');
+//     constructor.prototype.insertInDOM = () => {
+//       console.log('Inserting into DOM');
+//     };
+//   };
+// }
+
+// // Parameterized Decorators
+// // @Component({ selector: '#my-profile' })
+// class ProfileComponents {}
+
+// Decorator Composition
+
+type ComponentOptions = {
+  selector: string;
+};
+
+function Component(options: ComponentOptions) {
+  return (constructor: Function) => {
+    console.log('Component Decorator called');
+    constructor.prototype.options = options;
+    constructor.prototype.uniqueId = Date.now();
+
+    constructor.prototype.insertInDOM = () => {
+      console.log('Inserting into DOM');
+    };
   };
 }
 
-@Component
+function Pipe(constructor: Function) {
+  console.log('Pipe Decorator called');
+  constructor.prototype.pipe = true;
+}
+
+@Component({ selector: '#my-profile' })
+@Pipe
 class ProfileComponents {}
