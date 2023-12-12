@@ -433,22 +433,46 @@
 // store.add({ name: 'Shirt', price: 100 });
 
 // The keyof Operator
+// interface Product {
+//   name: string;
+//   price: number;
+// }
+
+// class Store<T> {
+//   protected _objects: T[] = [];
+
+//   add(object: T) {
+//     this._objects.push(object);
+//   }
+//   find(property: keyof T, value: unknown): T | undefined {
+//     return this._objects.find((item) => item[property] === value);
+//   }
+// }
+
+// let store = new Store<Product>();
+// store.add({ name: 'Shirt', price: 100 });
+// store.find('name', 1);
+
+// Type Mapping
+
 interface Product {
   name: string;
   price: number;
 }
 
-class Store<T> {
-  protected _objects: T[] = [];
+type Readonly<T> = {
+  readonly [K in keyof T]: T[K];
+};
 
-  add(object: T) {
-    this._objects.push(object);
-  }
-  find(property: keyof T, value: unknown): T | undefined {
-    return this._objects.find((item) => item[property] === value);
-  }
-}
+type Optional<T> = {
+  [K in keyof T]?: T[K];
+};
 
-let store = new Store<Product>();
-store.add({ name: 'Shirt', price: 100 });
-store.find('name', 1);
+type Nullable<T> = {
+  [K in keyof T]?: T[K];
+};
+
+let product: Readonly<Product> = {
+  name: 'Shirt',
+  price: 100,
+};
