@@ -162,25 +162,53 @@
 // console.log('event');
 
 // Creating Classes
-class Account {
-  readonly id: number;
-  owner: string;
-  banalce: number;
-  nichname?: string;
+// class Account {
+//   readonly id: number;
+//   owner: string;
+//   banalce: number;
+//   nichname?: string;
 
-  constructor(id: number, owner: string, banalce: number) {
-    this.id = id;
-    this.owner = owner;
-    this.banalce = banalce;
-  }
+//   constructor(id: number, owner: string, banalce: number) {
+//     this.id = id;
+//     this.owner = owner;
+//     this.banalce = banalce;
+//   }
 
-  deposit(amount: number): void {
-    if (amount <= 0) throw new Error('Amount should be greater than 0');
-    this.banalce += amount;
-  }
-}
+//   deposit(amount: number): void {
+//     if (amount <= 0) throw new Error('Amount should be greater than 0');
+//     this.banalce += amount;
+//   }
+// }
 // new Instance Creation and Initialization of class
-let account = new Account(1, 'akaid', 0);
+// let account = new Account(1, 'akaid', 0);
 
 // account.deposit(100);
 // console.log(account instanceof Account);
+
+//  Access Control Keywords
+class Account {
+  readonly id: number;
+  owner: string;
+  private _balance: number;
+  nickname?: string;
+
+  constructor(id: number, owner: string, balance: number) {
+    this.id = id;
+    this.owner = owner;
+    this._balance = balance;
+  }
+  deposit(amount: number): void {
+    if (amount <= 0) throw new Error('Amount should be greater than 0');
+    // Record a Transaction
+    this._balance += amount;
+  }
+
+  private calculateTax() {}
+
+  getBanalce(): number {
+    return this._balance;
+  }
+}
+let account = new Account(1, 'akaid', 0);
+console.log(account.balance);
+account
