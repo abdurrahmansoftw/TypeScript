@@ -309,22 +309,30 @@
 //   abstract removeEvent(): void;
 // }
 
-interface Calender {
-  name: string;
-  addEvent(): void;
-  removeEvent(): void;
-}
+// interface Calender {
+//   name: string;
+//   addEvent(): void;
+//   removeEvent(): void;
+// }
 
-interface CloudCalender extends Calender {
-  sync(): void;
-}
+// interface CloudCalender extends Calender {
+//   sync(): void;
+// }
 
-class GoogleCalendar implements Calender {
-  constructor(public name: string) {}
-  addEvent(): void {
-    throw new Error('Method not implemented.');
-  }
-  removeEvent(): void {
-    throw new Error('Method not implemented.');
-  }
+// class GoogleCalendar implements Calender {
+//   constructor(public name: string) {}
+//   addEvent(): void {
+//     throw new Error('Method not implemented.');
+//   }
+//   removeEvent(): void {
+//     throw new Error('Method not implemented.');
+//   }
+// }
+
+// Generics
+
+class KeyValuePair<K, V> {
+  constructor(public key: K, public value: V) {}
 }
+let pair = new KeyValuePair(1, 'First');
+console.log(pair.key, pair.value);
