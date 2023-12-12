@@ -331,18 +331,46 @@
 
 // Generics class
 
-class KeyValuePair<K, V> {
-  constructor(public key: K, public value: V) {}
-}
-let pair = new KeyValuePair(1, 'First');
-console.log(pair.key, pair.value);
+// class KeyValuePair<K, V> {
+//   constructor(public key: K, public value: V) {}
+// }
+// let pair = new KeyValuePair(1, 'First');
+// console.log(pair.key, pair.value);
 
 // Generics Function
 
-class ArrayUtils {
-  static wrapInArray<T>(value: T): T[] {
-    return [value];
-  }
+// class ArrayUtils {
+//   static wrapInArray<T>(value: T): T[] {
+//     return [value];
+//   }
+// }
+
+// let numbers = ArrayUtils.wrapInArray(1);
+
+// Generics Interface
+
+interface Result<T> {
+  data: T | null;
+  error: string | null;
 }
 
-let numbers = ArrayUtils.wrapInArray(1);
+function fetch<T>(url: string): Result<T> {
+  return {
+    data: null,
+    error: null,
+  };
+}
+
+interface User {
+  userName: string;
+}
+
+interface Product {
+  title: string;
+}
+
+let user = fetch<User>('url');
+user.data?.userName;
+
+let product = fetch<Product>('url');
+product.data?.title;
