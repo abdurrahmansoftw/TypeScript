@@ -629,7 +629,10 @@
 // let square = new Square(1);
 // console.log(square);
 
-interface Product {
-  name: string;
-  price: number;
-}
+// interface Product {
+//   name: string;
+//   price: number;
+// }
+
+import * as _ from 'lodash';
+_.clone([1, 2, 3]);
