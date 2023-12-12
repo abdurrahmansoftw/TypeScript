@@ -551,22 +551,52 @@
 // let person = new Person();
 // person.say('hello');
 
-function Capitalize(target: any, methodName: string, descriptor: PropertyDescriptor) {
-  let originalMethod = descriptor.get;
-  descriptor.get = function () {
-    let result = originalMethod?.call(this);
-    return result?.toUpperCase();
+// function Capitalize(target: any, methodName: string, descriptor: PropertyDescriptor) {
+//   let originalMethod = descriptor.get;
+//   descriptor.get = function () {
+//     let result = originalMethod?.call(this);
+//     return result?.toUpperCase();
+//   };
+// }
+
+// class Person {
+//   constructor(public firstName: string, public lastName: string) {}
+
+//   @Capitalize
+//   get fullName() {
+//     return `${this.firstName} ${this.lastName}`;
+//   }
+// }
+
+// let person = new Person('John', 'Doe');
+// console.log(person.fullName);
+
+// Decarator Property
+
+function MinLength(length: number) {
+  return (target: any, propertyName: string) => {
+    let value: string;
+    const descriptor: PropertyDescriptor = {
+      get() {
+        return value;
+      },
+      set(newValue: string) {
+        if (newValue.length < length) throw new Error(`${propertyName} Should at least {newValue} Characters long`);
+        value = newValue;
+      },
+    };
+    Object.defineProperty(target, propertyName, descriptor);
   };
 }
 
-class Person {
-  constructor(public firstName: string, public lastName: string) {}
-
-  @Capitalize
-  get fullName() {
-    return `${this.firstName} ${this.lastName}`;
+class User {
+  @MinLength(4)
+  password: string;
+  constructor(password: string) {
+    this.password = password;
   }
 }
 
-let person = new Person('John', 'Doe');
-console.log(person.fullName);
+let user = new User('abc');
+
+console.log(user.password);
