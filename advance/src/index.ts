@@ -192,14 +192,11 @@ class Account {
   constructor(public readonly id: number, public owner: string, private _balance: number) {}
   deposit(amount: number): void {
     if (amount <= 0) throw new Error('Amount should be greater than 0');
-    // Record a Transaction
     this._balance += amount;
   }
-
-  private calculateTax() {}
-
-  getBanalce(): number {
+  get balance(): number {
     return this._balance;
   }
 }
 let account = new Account(1, 'akaid', 0);
+console.log(account.balance);
