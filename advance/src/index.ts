@@ -137,7 +137,7 @@
 // console.log(ride.speed);
 
 // type assertion
-// let phone = <HTMLInputElement>document.getElementById('app');
+// let phone = <HTMLvalueElement>document.getElementById('app');
 // phone.value = '123';
 //
 
@@ -329,10 +329,20 @@
 //   }
 // }
 
-// Generics
+// Generics class
 
 class KeyValuePair<K, V> {
   constructor(public key: K, public value: V) {}
 }
 let pair = new KeyValuePair(1, 'First');
 console.log(pair.key, pair.value);
+
+// Generics Function
+
+class ArrayUtils {
+  static wrapInArray<T>(value: T): T[] {
+    return [value];
+  }
+}
+
+let numbers = ArrayUtils.wrapInArray(1);
