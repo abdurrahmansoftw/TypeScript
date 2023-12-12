@@ -236,47 +236,66 @@
 
 // Inheritance
 
-class Person {
-  constructor(public firstName: string, public lastName: string) {}
+// class Person {
+//   constructor(public firstName: string, public lastName: string) {}
 
-  get fullName(): string {
-    return `Student ${this.firstName} ${this.lastName}`;
-  }
-  protected walk() {
-    console.log('Walking');
-  }
-}
+//   get fullName(): string {
+//     return `Student ${this.firstName} ${this.lastName}`;
+//   }
+//   protected walk() {
+//     console.log('Walking');
+//   }
+// }
 
-class Student extends Person {
-  constructor(public studentId: number, firstName: string, lastName: string) {
-    super(firstName, lastName);
-  }
-  protected takeTest() {
-    this.walk();
-    console.log('Taking test');
-  }
-}
+// class Student extends Person {
+// constructor(public studentId: number, firstName: string, lastName: string) {
+// super(firstName, lastName);
+//   }
+//   protected takeTest() {
+//     this.walk();
+//     console.log('Taking test');
+//   }
+// }
 // Method overriding
-class Teacher extends Person {
-  override get fullName(): string {
-    return `Professor ` + super.fullName;
-  }
-}
-let teacher = new Teacher('John', 'Doe');
-
-class Pricipal extends Teacher {
-  override get fullName(): string {
-    return `Principal ` + super.fullName;
-  }
-}
-
+// class Teacher extends Person {
+// override get fullName(): string {
+// return `Professor ` + super.fullName;
+// }
+// }
+// let teacher = new Teacher('John', 'Doe');
+//
+// class Pricipal extends Teacher {
+// override get fullName(): string {
+// return `Principal ` + super.fullName;
+// }
+// }
+//
 // Polymorphism behavior of a class to change based on the type of data it is holding
-function printNames(people: Person[]) {
-  for (let person of people) {
-    console.log(person.fullName);
-  }
-}
-
-printNames([new Student(1, 'Mary', 'Smith'), new Teacher('John', 'Doe'), new Pricipal('Jane', 'Doe')]);
+// function printNames(people: Person[]) {
+// for (let person of people) {
+// console.log(person.fullName);
+// }
+// }
+//
+// printNames([new Student(1, 'Mary', 'Smith'), new Teacher('John', 'Doe'), new Pricipal('Jane', 'Doe')]);
 
 //  Private vs Protected Members
+
+// 15- Abstract Classes and Methods
+
+abstract class Shape {
+  constructor(public color: string) {}
+  abstract render(): void;
+}
+
+class Circle extends Shape {
+  constructor(color: string, public radius: number) {
+    super(color);
+  }
+  override render(): void {
+    console.log(`Rendering a circle of radius ${this.radius} and color ${this.color}`);
+  }
+}
+
+let shape = new Circle('red', 10);
+shape.render();
