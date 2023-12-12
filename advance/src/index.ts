@@ -431,3 +431,24 @@
 
 // let store = new Store<Product>();
 // store.add({ name: 'Shirt', price: 100 });
+
+// The keyof Operator
+interface Product {
+  name: string;
+  price: number;
+}
+
+class Store<T> {
+  protected _objects: T[] = [];
+
+  add(object: T) {
+    this._objects.push(object);
+  }
+  find(property: keyof T, value: unknown): T | undefined {
+    return this._objects.find((item) => item[property] === value);
+  }
+}
+
+let store = new Store<Product>();
+store.add({ name: 'Shirt', price: 100 });
+store.find('name', 1);
