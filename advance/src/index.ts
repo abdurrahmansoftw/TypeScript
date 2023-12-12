@@ -255,6 +255,11 @@ class Student extends Person {
     console.log('Taking test');
   }
 }
-
-let student = new Student(1, 'John', 'Smith@gmail.com');
-console.log(student.fullName);
+// Method overriding
+class Teacher extends Person {
+  override get fullName(): string {
+    return `Professor ` + super.fullName;
+  }
+}
+let teacher = new Teacher('John', 'Doe');
+console.log(teacher.fullName);
