@@ -154,9 +154,27 @@
 // }
 
 // Never Type
-function processEvent(): never {
-  while (true) {}
-}
+// function processEvent(): never {
+//   while (true) {}
+// }
 
-processEvent();
-console.log('event');
+// processEvent();
+// console.log('event');
+
+// Creating Classes
+class Account {
+  id: number;
+  owner: string;
+  banalce: number;
+
+  constructor(id: number, owner: string, banalce: number) {
+    this.id = id;
+    this.owner = owner;
+    this.banalce = banalce;
+  }
+
+  deposit(amount: number): void {
+    if (amount > 0) throw new Error('Amount should be greater than 0');
+    this.banalce += amount;
+  }
+}
