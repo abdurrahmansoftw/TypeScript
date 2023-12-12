@@ -2,15 +2,21 @@ import Reminder from '../models/reminders';
 
 interface ReminderListProps {
   items: Reminder[];
+  onRempveReminder: (id: number) => void;
 }
 
-function ReminderList({ items }: ReminderListProps) {
+function ReminderList({ items, onRempveReminder }: ReminderListProps) {
   return (
-    <ul>
+    <ol className='list-group'>
       {items.map((item) => (
-        <li key={item.id}>{item.title}</li>
+        <li className='list-group-item' key={item.id}>
+          {item.title}
+          <button onClick={() => onRempveReminder(item.id)} className='btn btn-outline-danger mx-3 rounded-pill'>
+            Delete
+          </button>
+        </li>
       ))}
-    </ul>
+    </ol>
   );
 }
 
