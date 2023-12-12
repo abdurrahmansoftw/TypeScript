@@ -186,17 +186,27 @@
 // console.log(account instanceof Account);
 
 //  Access Control Keywords
-class Account {
-  nickname?: string;
+// class Account {
+//   nickname?: string;
 
-  constructor(public readonly id: number, public owner: string, private _balance: number) {}
-  deposit(amount: number): void {
-    if (amount <= 0) throw new Error('Amount should be greater than 0');
-    this._balance += amount;
-  }
-  get balance(): number {
-    return this._balance;
-  }
+//   constructor(public readonly id: number, public owner: string, private _balance: number) {}
+//   deposit(amount: number): void {
+//     if (amount <= 0) throw new Error('Amount should be greater than 0');
+//     this._balance += amount;
+//   }
+//   get balance(): number {
+//     return this._balance;
+//   }
+// }
+// let account = new Account(1, 'akaid', 0);
+// console.log(account.balance);
+
+// Index Signatures
+class SeatAssignment {
+  [seatNumber: string]: string;
 }
-let account = new Account(1, 'akaid', 0);
-console.log(account.balance);
+
+let seats = new SeatAssignment();
+seats.A1 = 'John';
+seats.A2 = 'Mary';
+console.log(seats.A1);
