@@ -1,15 +1,19 @@
 "use strict";
-class Store {
-    constructor() {
-        this._objects = [];
-    }
-    add(object) {
-        this._objects.push(object);
-    }
-    find(property, value) {
-        return this._objects.find((item) => item[property] === value);
-    }
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+function Component(constructor) {
+    console.log('Component Decorator called');
+    constructor.prototype.uniqueId = Date.now();
+    constructor.prototype.insertInDOM = () => {
+        console.log('Inserting into DOM');
+    };
 }
-let store = new Store();
-store.add({ name: 'Shirt', price: 100 });
-store.find('name', 1);
+let ProfileComponents = class ProfileComponents {
+};
+ProfileComponents = __decorate([
+    Component
+], ProfileComponents);

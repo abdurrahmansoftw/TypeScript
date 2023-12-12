@@ -455,24 +455,43 @@
 
 // Type Mapping
 
-interface Product {
-  name: string;
-  price: number;
+// interface Product {
+//   name: string;
+//   price: number;
+// }
+
+// type Readonly<T> = {
+//   readonly [K in keyof T]: T[K];
+// };
+
+// type Optional<T> = {
+//   [K in keyof T]?: T[K];
+// };
+
+// type Nullable<T> = {
+//   [K in keyof T]?: T[K];
+// };
+
+// let product: Readonly<Product> = {
+//   name: 'Shirt',
+//   price: 100,
+// };
+
+// Decorators
+
+// class Component {
+//   insertInDOM() {}
+// }
+
+function Component(constructor: Function) {
+  console.log('Component Decorator called');
+
+  constructor.prototype.uniqueId = Date.now();
+
+  constructor.prototype.insertInDOM = () => {
+    console.log('Inserting into DOM');
+  };
 }
 
-type Readonly<T> = {
-  readonly [K in keyof T]: T[K];
-};
-
-type Optional<T> = {
-  [K in keyof T]?: T[K];
-};
-
-type Nullable<T> = {
-  [K in keyof T]?: T[K];
-};
-
-let product: Readonly<Product> = {
-  name: 'Shirt',
-  price: 100,
-};
+@Component
+class ProfileComponents {}
