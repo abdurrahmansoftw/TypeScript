@@ -13,4 +13,4 @@ class Account {
 }
 let account = new Account(1, 'akaid', 0);
 account.deposit(100);
-console.log(account);
+console.log(account instanceof Account);

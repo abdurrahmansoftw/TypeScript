@@ -163,9 +163,10 @@
 
 // Creating Classes
 class Account {
-  id: number;
+  readonly id: number;
   owner: string;
   banalce: number;
+  nichname?: string;
 
   constructor(id: number, owner: string, banalce: number) {
     this.id = id;
@@ -180,6 +181,6 @@ class Account {
 }
 // new Instance Creation and Initialization of class
 let account = new Account(1, 'akaid', 0);
-account.deposit(100);
 
-console.log(account);
+// account.deposit(100);
+// console.log(account instanceof Account);
