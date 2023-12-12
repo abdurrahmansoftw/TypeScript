@@ -5,7 +5,7 @@ class Person {
         this.lastName = lastName;
     }
     get fullName() {
-        return `${this.firstName} ${this.lastName}`;
+        return `Student ${this.firstName} ${this.lastName}`;
     }
     walk() {
         console.log('Walking');
@@ -26,4 +26,14 @@ class Teacher extends Person {
     }
 }
 let teacher = new Teacher('John', 'Doe');
-console.log(teacher.fullName);
+class Pricipal extends Teacher {
+    get fullName() {
+        return `Principal ` + super.fullName;
+    }
+}
+printNames([new Student(1, 'Mary', 'Smith'), new Teacher('John', 'Doe'), new Pricipal('Jane', 'Doe')]);
+function printNames(people) {
+    for (let person of people) {
+        console.log(person.fullName);
+    }
+}

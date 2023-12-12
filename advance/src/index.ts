@@ -240,7 +240,7 @@ class Person {
   constructor(public firstName: string, public lastName: string) {}
 
   get fullName(): string {
-    return `${this.firstName} ${this.lastName}`;
+    return `Student ${this.firstName} ${this.lastName}`;
   }
   walk() {
     console.log('Walking');
@@ -262,4 +262,18 @@ class Teacher extends Person {
   }
 }
 let teacher = new Teacher('John', 'Doe');
-console.log(teacher.fullName);
+
+class Pricipal extends Teacher {
+  override get fullName(): string {
+    return `Principal ` + super.fullName;
+  }
+}
+
+// Polymorphism behavior of a class to change based on the type of data it is holding
+function printNames(people: Person[]) {
+  for (let person of people) {
+    console.log(person.fullName);
+  }
+}
+
+printNames([new Student(1, 'Mary', 'Smith'), new Teacher('John', 'Doe'), new Pricipal('Jane', 'Doe')]);
