@@ -349,28 +349,47 @@
 
 // Generics Interface
 
-interface Result<T> {
-  data: T | null;
-  error: string | null;
+// interface Result<T> {
+//   data: T | null;
+//   error: string | null;
+// }
+
+// function fetch<T>(url: string): Result<T> {
+//   return {
+//     data: null,
+//     error: null,
+//   };
+// }
+
+// interface User {
+//   userName: string;
+// }
+
+// interface Product {
+//   title: string;
+// }
+
+// let user = fetch<User>('url');
+// user.data?.userName;
+
+// let product = fetch<Product>('url');
+// product.data?.title;
+
+// Generic Constraints
+
+// interface Person {
+// name: string;
+// }
+
+class Person {
+  constructor(public name: string) {}
 }
 
-function fetch<T>(url: string): Result<T> {
-  return {
-    data: null,
-    error: null,
-  };
+class Customar extends Person {}
+
+function echo<T extends Person>(value: T): T {
+  return value;
 }
 
-interface User {
-  userName: string;
-}
-
-interface Product {
-  title: string;
-}
-
-let user = fetch<User>('url');
-user.data?.userName;
-
-let product = fetch<Product>('url');
-product.data?.title;
+// echo(new Person('John'));
+echo(new Customar('John'));
