@@ -532,21 +532,41 @@
 // class ProfileComponents {}
 
 // Method Decarator
-function Log(target: any, methodName: string, descriptor: PropertyDescriptor) {
-  let originalMethod = descriptor.value as Function;
-  descriptor.value = function () {
-    console.log('Befor');
-    originalMethod.call(this, 'blue sky');
-    console.log('After');
+// function Log(target: any, methodName: string, descriptor: PropertyDescriptor) {
+//   let originalMethod = descriptor.value as Function;
+//   descriptor.value = function (...args: any) {
+//     console.log('Befor');
+//     originalMethod.call(this, ...args);
+//     console.log('After');
+//   };
+// }
+
+// class Person {
+//   @Log
+//   say(message: string) {
+//     console.log('Person says: ' + message);
+//   }
+// }
+
+// let person = new Person();
+// person.say('hello');
+
+function Capitalize(target: any, methodName: string, descriptor: PropertyDescriptor) {
+  let originalMethod = descriptor.get;
+  descriptor.get = function () {
+    let result = originalMethod?.call(this);
+    return result?.toUpperCase();
   };
 }
 
 class Person {
-  @Log
-  say(message: string) {
-    console.log('Person says: ' + message);
+  constructor(public firstName: string, public lastName: string) {}
+
+  @Capitalize
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
   }
 }
 
-let person = new Person();
-person.say('hello');
+let person = new Person('John', 'Doe');
+console.log(person.fullName);
