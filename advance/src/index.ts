@@ -506,27 +506,47 @@
 
 // Decorator Composition
 
-type ComponentOptions = {
-  selector: string;
-};
+// type ComponentOptions = {
+//   selector: string;
+// };
 
-function Component(options: ComponentOptions) {
-  return (constructor: Function) => {
-    console.log('Component Decorator called');
-    constructor.prototype.options = options;
-    constructor.prototype.uniqueId = Date.now();
+// function Component(options: ComponentOptions) {
+//   return (constructor: Function) => {
+//     console.log('Component Decorator called');
+//     constructor.prototype.options = options;
+//     constructor.prototype.uniqueId = Date.now();
 
-    constructor.prototype.insertInDOM = () => {
-      console.log('Inserting into DOM');
-    };
+//     constructor.prototype.insertInDOM = () => {
+//       console.log('Inserting into DOM');
+//     };
+//   };
+// }
+
+// function Pipe(constructor: Function) {
+//   console.log('Pipe Decorator called');
+//   constructor.prototype.pipe = true;
+// }
+
+// @Component({ selector: '#my-profile' })
+// @Pipe
+// class ProfileComponents {}
+
+// Method Decarator
+function Log(target: any, methodName: string, descriptor: PropertyDescriptor) {
+  let originalMethod = descriptor.value as Function;
+  descriptor.value = function () {
+    console.log('Befor');
+    originalMethod.call(this, 'blue sky');
+    console.log('After');
   };
 }
 
-function Pipe(constructor: Function) {
-  console.log('Pipe Decorator called');
-  constructor.prototype.pipe = true;
+class Person {
+  @Log
+  say(message: string) {
+    console.log('Person says: ' + message);
+  }
 }
 
-@Component({ selector: '#my-profile' })
-@Pipe
-class ProfileComponents {}
+let person = new Person();
+person.say('hello');
