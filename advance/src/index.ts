@@ -242,7 +242,7 @@ class Person {
   get fullName(): string {
     return `Student ${this.firstName} ${this.lastName}`;
   }
-  walk() {
+  protected walk() {
     console.log('Walking');
   }
 }
@@ -251,7 +251,8 @@ class Student extends Person {
   constructor(public studentId: number, firstName: string, lastName: string) {
     super(firstName, lastName);
   }
-  takeTest() {
+  protected takeTest() {
+    this.walk();
     console.log('Taking test');
   }
 }
@@ -277,3 +278,5 @@ function printNames(people: Person[]) {
 }
 
 printNames([new Student(1, 'Mary', 'Smith'), new Teacher('John', 'Doe'), new Pricipal('Jane', 'Doe')]);
+
+//  Private vs Protected Members
