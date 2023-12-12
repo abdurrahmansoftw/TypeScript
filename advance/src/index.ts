@@ -212,24 +212,49 @@
 // console.log(seats.A1);
 
 // Static Members
-class Ride {
-  static _activeRides: number = 0;
+// class Ride {
+//   static _activeRides: number = 0;
 
-  start() {
-    Ride._activeRides++;
+//   start() {
+//     Ride._activeRides++;
+//   }
+//   stop() {
+//     Ride._activeRides--;
+//   }
+//   static get activeRides(): number {
+//     return Ride._activeRides;
+//   }
+// }
+
+// let ride = new Ride();
+// ride.start();
+
+// let ride2 = new Ride();
+// ride2.start();
+
+// console.log(Ride._activeRides);
+
+// Inheritance
+
+class Person {
+  constructor(public firstName: string, public lastName: string) {}
+
+  get fullName(): string {
+    return `${this.firstName} ${this.lastName}`;
   }
-  stop() {
-    Ride._activeRides--;
-  }
-  static get activeRides(): number {
-    return Ride._activeRides;
+  walk() {
+    console.log('Walking');
   }
 }
 
-let ride = new Ride();
-ride.start();
+class Student extends Person {
+  constructor(public studentId: number, firstName: string, lastName: string) {
+    super(firstName, lastName);
+  }
+  takeTest() {
+    console.log('Taking test');
+  }
+}
 
-let ride2 = new Ride();
-ride2.start();
-
-console.log(Ride._activeRides);
+let student = new Student(1, 'John', 'Smith@gmail.com');
+console.log(student.fullName);
