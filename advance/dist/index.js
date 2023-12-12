@@ -1,7 +1,15 @@
 "use strict";
-class SeatAssignment {
+class Ride {
+    start() {
+        Ride.activeRides++;
+    }
+    stop() {
+        Ride.activeRides--;
+    }
 }
-let seats = new SeatAssignment();
-seats.A1 = 'John';
-seats.A2 = 'Mary';
-console.log(seats.A1);
+Ride.activeRides = 0;
+let ride = new Ride();
+ride.start();
+let ride2 = new Ride();
+ride2.start();
+console.log(Ride.activeRides);

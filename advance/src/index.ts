@@ -202,11 +202,34 @@
 // console.log(account.balance);
 
 // Index Signatures
-class SeatAssignment {
-  [seatNumber: string]: string;
+// class SeatAssignment {
+//   [seatNumber: string]: string;
+// }
+
+// let seats = new SeatAssignment();
+// seats.A1 = 'John';
+// seats.A2 = 'Mary';
+// console.log(seats.A1);
+
+// Static Members
+class Ride {
+  static _activeRides: number = 0;
+
+  start() {
+    Ride._activeRides++;
+  }
+  stop() {
+    Ride._activeRides--;
+  }
+  static get activeRides(): number {
+    return Ride._activeRides;
+  }
 }
 
-let seats = new SeatAssignment();
-seats.A1 = 'John';
-seats.A2 = 'Mary';
-console.log(seats.A1);
+let ride = new Ride();
+ride.start();
+
+let ride2 = new Ride();
+ride2.start();
+
+console.log(Ride._activeRides);
